@@ -60,10 +60,10 @@ const Task = () => {
 
   const statusConfig = {
     'todo': { label: 'To Do', color: 'bg-orange-100 text-orange-800' },
-    'in-progress': { label: 'In Progress', color: 'bg-blue-100 text-blue-800' },
-    'need-for-test': { label: 'Testing', color: 'bg-yellow-100 text-yellow-800' },
+    'progress': { label: 'In Progress', color: 'bg-blue-100 text-blue-800' },
+    'test': { label: 'Testing', color: 'bg-yellow-100 text-yellow-800' },
     'completed': { label: 'Done', color: 'bg-green-100 text-green-800' },
-    're-open': { label: 'Re-open', color: 'bg-red-100 text-red-800' }
+    'reopen': { label: 'Re-open', color: 'bg-red-100 text-red-800' }
   };
   const formatDate = (date) => {
         console.log("inside the data form ")  
@@ -223,16 +223,16 @@ const Task = () => {
                     </div>
                   </div>
                 </div>
-                <div className="space-y-4">
+                {/* <div className="space-y-4"> */}
                   {/* Add attachments, comments, sub-tasks here */}
-                  <div className="bg-gray-50 p-4 rounded-lg">
+                  {/* <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-medium mb-2">Actions</h4>
                     <div className="flex space-x-2">
                       <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm">Update Status</button>
                       <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 text-sm">Add Comment</button>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
