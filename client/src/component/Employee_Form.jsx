@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { FaXmark } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { addEmployee,updateEmployee} from '../Redux/employeeSlice'
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import toast from "react-hot-toast";
 
 const schema = yup.object({
+ 
   name: yup.string().required("Name is required"),
   position: yup.string().required("Position is required"),
   email: yup
@@ -51,6 +52,7 @@ const editSchema = yup.object({
 });
 
 const Employee_Form = ({ isOpen, onClose,editData }) => {
+   const employees=useSelector((state)=>state.employees.employees)
   console.log("edit data in form",editData)
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
@@ -96,6 +98,17 @@ const Employee_Form = ({ isOpen, onClose,editData }) => {
       email: data.email,
       image: imageUrl,
     };
+    const isDuplicate = employees.some(
+  (emp) =>
+    emp.email === data.email &&
+    emp.id !== editData?.id   // important for edit
+);
+if(isDuplicate){
+  toast.error("Employee with this email already exist")
+  return null
+}else{
+  console.log("inside employye email chec")
+}
      if (editData) {
       const isChanged =
         employeeData.name !== editData.name ||

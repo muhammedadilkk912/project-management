@@ -13,7 +13,7 @@ const DashLayout = () => {
   const navLinks = [
     { icon: MdOutlineDashboard, label: 'Dashboard', path: '/' },
     { icon: FaUsers, label: 'Employees', path: '/employees' },
-    { icon: RiFolderChartLine, label: 'Projects', path: '/project' },
+    { icon: RiFolderChartLine, label: 'Projects', path: '/projects' },
     { icon: GoTasklist, label: 'Tasks', path: '/tasks' },
   ];
 
