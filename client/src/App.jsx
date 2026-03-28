@@ -6,6 +6,7 @@ import New from './page/New'
 import Employees from './page/Employees'
 import  { Toaster } from 'react-hot-toast';
 import Projects from './page/Projects'
+import Task from './page/Task'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route index element={<New/>}/>
           <Route path='employees' element={<Employees/>}/>
           <Route path='projects' element={<Projects/>}/>
+          <Route path='tasks' element={<Task/>}/>
           </Route>
           
         </Routes>
